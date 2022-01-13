@@ -9,7 +9,7 @@ from aws_cdk import (
 
 class StaticExampleStack(core.Stack):
 
-    def __init__(self, scope: self.Construct, id: str, **kwargs) -> None:
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
         bucket = s3.Bucket(self, "ilanBucket12345666",
