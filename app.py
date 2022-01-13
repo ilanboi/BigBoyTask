@@ -1,8 +1,8 @@
-from aws_cdk import (
-    core,
-    aws_s3 as s3,
-    aws_cloudfront as cloudfront
-)
+#from aws_cdk import (
+#    core,
+#    aws_s3 as s3,
+#    aws_cloudfront as cloudfront
+#)
 
 class StaticExampleStack(core.Stack):
  
