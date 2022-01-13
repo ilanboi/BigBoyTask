@@ -1,4 +1,6 @@
 import time
+
+import aws_cdk
 from attr.filters import exclude
 from aws_cdk import (
     aws_s3 as s3,
@@ -34,4 +36,6 @@ class StaticExampleStack(core.Stack):
                                          )
                                      ]
                                      )
-        print(cloudfront.distribution_domain_name)
+        aws_cdk.CfnOutput(self,'Domain Name',
+            value=cloudfront.distribution_domain_name,
+            description='Domain Name' )
