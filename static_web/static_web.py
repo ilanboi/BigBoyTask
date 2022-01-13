@@ -2,6 +2,7 @@ import time
 
 from aws_cdk import (
     aws_s3 as s3,
+    aws_s3_deployment as s3deploy,
     aws_cloudfront as cf,
     core
 )
