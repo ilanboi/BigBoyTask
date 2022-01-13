@@ -12,12 +12,16 @@ class StaticExampleStack(core.Stack):
     def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        bucket = s3.Bucket(self, "ilanBucket12345666",
-                           access_control=s3.BucketAccessControl.PUBLIC_READ,
-                           website_index_document="index.html"
-                           )
-        bucket.grant_public_access()
-
+       bucket = s3.Bucket(self, "ilanBucket123456666",
+           website_index_document="index.html",
+           public_read_access=True
+       )
+    
+       s3deploy.BucketDeployment(self, "DeployWebsite",
+           sources=[s3deploy.Source.asset("./index.html")],
+           destination_bucket=bucket,
+           destination_key_prefix="web/static"
+       )
 
         cf.CloudFrontWebDistribution(self, "ilanCDN12345666",
                                      origin_configs=[
