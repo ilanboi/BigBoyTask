@@ -25,5 +25,5 @@ class StaticSite(Construct):
             ),
             default_root_object="index.html",
         )
-        app.synth()
+app.synth()
         
