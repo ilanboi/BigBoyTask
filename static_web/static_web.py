@@ -19,8 +19,7 @@ class StaticExampleStack(core.Stack):
                            )
         s3deploy.BucketDeployment(self, "DeployWebsite",
                            sources=[s3deploy.Source.asset('./', { exclude: ['**', '!index.html'] }),
-                           destination_bucket=bucket,
-                           destination_key_prefix="web/static"
+                           destination_bucket=bucket
                            )
 
         cf.CloudFrontWebDistribution(self, "ilanCDN12345666",
