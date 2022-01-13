@@ -16,7 +16,7 @@ class StaticExampleStack(core.Stack):
                            public_read_access=True,
                            website_index_document="index.html"
                            )
-       s3deploy.BucketDeployment(self, "DeployWebsite",
+        s3deploy.BucketDeployment(self, "DeployWebsite",
                            sources=[s3deploy.Source.asset("./index.html")],
                            destination_bucket=bucket,
                            destination_key_prefix="web/static"
