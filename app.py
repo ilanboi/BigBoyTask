@@ -1,8 +1,11 @@
 from aws_cdk import (
     aws_s3 as s3,
-    aws_cloudfront as cloudfront
+    aws_cloudfront as cloudfront,
+    App
 )
 from constructs import Construct
+
+app = App()
 
 class StaticSite(Construct):
     def __init__(self):
