@@ -1,13 +1,13 @@
 from aws_cdk import (
     aws_s3 as s3,
     aws_cloudfront as cloudfront,
-    App
+    App,
+    Stack
 )
-from constructs import Construct
 
 app = App()
 
-class StaticSite(Construct):
+class StaticSite(Stack):
     def __init__(self):
     
         self.bucket = s3.Bucket(self, "ilanbucket123456789",
