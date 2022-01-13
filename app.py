@@ -10,7 +10,7 @@ app = App()
 class StaticSite(Construct):
     def __init__(self):
     
-        self.bucket = s3.Bucket(self, "MyBucket",
+        self.bucket = s3.Bucket(self, "ilanbucket123456789",
                            access_control=s3.BucketAccessControl.PUBLIC_READ,
                            website_index_document="index.html"
                            )
@@ -18,7 +18,7 @@ class StaticSite(Construct):
         
         self.distribution = cloudfront.Distribution(
             self,
-            "cloudfront_distribution",
+            "ilanfront123456789",
             default_behavior=cloudfront.BehaviorOptions(
                 origin=origins.S3Origin(self.bucket),
                 viewer_protocol_policy=cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
