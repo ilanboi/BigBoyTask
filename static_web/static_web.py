@@ -23,6 +23,7 @@ class StaticExampleStack(core.Stack):
                                      price_class=cf.PriceClass.PRICE_CLASS_100,
                                      alias_configuration=cf.AliasConfiguration(
                                          names=["static.rubenjgarcia.es"],
+                                         acm_cert_ref="",
                                          ssl_method=cf.SSLMethod.SNI,
                                          security_policy=cf.SecurityPolicyProtocol.TLS_V1_1_2016
                                      ),
