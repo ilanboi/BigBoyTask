@@ -3,12 +3,11 @@ import time
 from aws_cdk import (
     aws_s3 as s3,
     aws_cloudfront as cf,
-    custom_resources as cr,
-    Stack
+    core
 )
 
 
-class StaticExampleStack(Stack):
+class StaticExampleStack(core.Stack):
 
     def __init__(self, scope: self.Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
