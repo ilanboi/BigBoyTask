@@ -21,7 +21,7 @@ class StaticExampleStack(core.Stack):
                            destination_bucket=bucket
                            )
 
-        cf.CloudFrontWebDistribution(self, "ilanCDN12345666",
+        cloudfront = cf.CloudFrontWebDistribution(self, "ilanCDN12345666",
                                      origin_configs=[
                                          cf.SourceConfiguration(
                                              behaviors=[
@@ -34,3 +34,4 @@ class StaticExampleStack(core.Stack):
                                          )
                                      ]
                                      )
+        print(cloudfront.distribution_domain_name)
