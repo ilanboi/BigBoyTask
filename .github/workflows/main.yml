@@ -47,6 +47,9 @@ jobs:
       - name: CDK Synth
         run: cdk synth --app "python app.py"
 
+      - name: CDK bootstrap
+        run: cdk bootstrap aws://672268946003/eu-central-1
+
       - name: CDK Deploy
         run: cdk deploy --app "python app.py" --require-approval never
 
