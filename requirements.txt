@@ -1,2 +1,4 @@
-aws-cdk-lib>=2.0.0
-aws-cdk.core==1.139.0 
+aws-cdk.core==1.23.0
+aws-cdk.aws-s3==1.23.0
+aws-cdk.aws-certificatemanager==1.23.0
+aws-cdk.aws-ssm==1.23.0
