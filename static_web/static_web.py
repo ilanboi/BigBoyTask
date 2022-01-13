@@ -17,7 +17,6 @@ class StaticExampleStack(core.Stack):
                            website_index_document="index.html"
                            )
         s3deploy.BucketDeployment(self, "DeployWebsite",
-                           #sources=[s3deploy.Source.asset('./', { exclude: ['**', '!index.html'] })],
                            sources=[s3deploy.Source.asset("./website")],
                            destination_bucket=bucket
                            )
