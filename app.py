@@ -1,29 +1,10 @@
-from aws_cdk import (
-    aws_s3 as s3,
-    aws_cloudfront as cloudfront,
-    App
-)
-from constructs import Construct
+#!/usr/bin/env python3
 
-app = App()
+from aws_cdk import core
 
-class StaticSite(Construct):
-    def __init__(self):
-    
-        self.bucket = s3.Bucket(self, "ilanbucket123456789",
-                           access_control=s3.BucketAccessControl.PUBLIC_READ,
-                           website_index_document="index.html"
-                           )
-        bucket.grant_public_access()
-        
-        self.distribution = cloudfront.Distribution(
-            self,
-            "ilanfront123456789",
-            default_behavior=cloudfront.BehaviorOptions(
-                origin=origins.S3Origin(self.bucket),
-                viewer_protocol_policy=cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-            ),
-            default_root_object="index.html",
-        )
+from static_web.static_web import StaticExampleStack
+
+app = core.App()
+StaticExampleStack(app, "static-web")
+
 app.synth()
-        
