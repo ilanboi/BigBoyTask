@@ -36,6 +36,6 @@ class StaticExampleStack(core.Stack):
                                          )
                                      ]
                                      )
-        aws_cdk.CfnOutput(self,'Domain Name',
-            value=cloudfront.distribution_domain_name,
-            description='Domain Name' )
+        core.CfnOutput(self, 'Domain Name',
+                          value=cloudfront.distribution_domain_name,
+                          description='Domain Name')
