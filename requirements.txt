@@ -1,5 +1,2 @@
 aws-cdk.core==1.23.0
-aws-cdk.aws-s3==1.23.0
-aws-cdk.aws-cloudfront==1.23.0
-aws-cdk.custom-resources==1.23.0
 aws-cdk-lib>=2.0.0
