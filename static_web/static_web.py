@@ -1,7 +1,6 @@
 import time
 
 from aws_cdk import (
-    core,
     aws_s3 as s3,
     aws_cloudfront as cf,
     custom_resources as cr,
