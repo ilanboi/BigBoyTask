@@ -1,5 +1,6 @@
 import time
 
+from attr.filters import exclude
 from aws_cdk import (
     aws_s3 as s3,
     aws_s3_deployment as s3deploy,
@@ -18,7 +19,8 @@ class StaticExampleStack(core.Stack):
                            website_index_document="index.html"
                            )
         s3deploy.BucketDeployment(self, "DeployWebsite",
-                           sources=[s3deploy.Source.asset('./', { exclude: ['**', '!index.html'] }),
+                           #sources=[s3deploy.Source.asset('./', { exclude: ['**', '!index.html'] })],
+                           sources=[s3deploy.Source.asset("./website")],
                            destination_bucket=bucket
                            )
 
