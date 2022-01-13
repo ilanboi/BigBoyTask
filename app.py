@@ -2,21 +2,24 @@ from aws_cdk import (
     aws_s3 as s3,
     aws_cloudfront as cloudfront
 )
-def __init__(self):
+from constructs import Construct
 
-    self.bucket = s3.Bucket(self, "MyBucket",
-                       access_control=s3.BucketAccessControl.PUBLIC_READ,
-                       website_index_document="index.html"
-                       )
-    bucket.grant_public_access()
+class StaticSite(Construct):
+    def __init__(self):
     
-    self.distribution = cloudfront.Distribution(
-        self,
-        "cloudfront_distribution",
-        default_behavior=cloudfront.BehaviorOptions(
-            origin=origins.S3Origin(self.bucket),
-            viewer_protocol_policy=cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-        ),
-        default_root_object="index.html",
-    )
-    
+        self.bucket = s3.Bucket(self, "MyBucket",
+                           access_control=s3.BucketAccessControl.PUBLIC_READ,
+                           website_index_document="index.html"
+                           )
+        bucket.grant_public_access()
+        
+        self.distribution = cloudfront.Distribution(
+            self,
+            "cloudfront_distribution",
+            default_behavior=cloudfront.BehaviorOptions(
+                origin=origins.S3Origin(self.bucket),
+                viewer_protocol_policy=cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+            ),
+            default_root_object="index.html",
+        )
+        
