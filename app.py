@@ -3,8 +3,8 @@ from aws_cdk import (
     aws_cloudfront as cloudfront,
     App,
     Stack,
-    core
 )
+import aws_cdk.core as core
 
 app = core.App()
 
